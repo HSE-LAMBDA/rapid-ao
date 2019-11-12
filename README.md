@@ -16,7 +16,7 @@ This repository uses the following libraries:
 - tqdm                   4.32.2
 
 
-Among non-default packages (PythiaMill)[https://gitlab.com/mborisyak/pythia-mill] library requires manual installation.
+Among non-default packages [PythiaMill](https://gitlab.com/mborisyak/pythia-mill) library requires manual installation.
 Please, follow the instructions in the corresponding repositories.
 
 Other packages are available from the default pip repository and required versions are specified in `setup.py`.
@@ -28,6 +28,6 @@ Jupyter notebooks with the experiments described in the paper can be found in `n
 - `BO-XOR-GBDT.ipynb` --- the experiment with Bayesian Optimization over GBDT-based adaptive divergences on one of the synthetic tasks;
 - `BO-Pythia1-Cat.ipynb` --- tuning Pythia hyper-parameters with Bayesian Optimization and CatBoost-based adaptive divergences;
 - `AVO.ipynb` --- experiments with Adversarial Variational Optimization;
-- `Pythia-Tune-AVO.ipynb` --- an example implementation of AVO (source: (MLHEP 2019)[https://github.com/yandexdataschool/mlhep2019/blob/master/notebooks/day-8/Pythia-Tune-AVO.ipynb]).
+- `Pythia-Tune-AVO.ipynb` --- an example implementation of AVO (source: [MLHEP 2019](https://github.com/yandexdataschool/mlhep2019/blob/master/notebooks/day-8/Pythia-Tune-AVO.ipynb)).
 
 *Note: inside the package adaptive divergences might be referred as 'pseudo-Jensen-Snannon divergences' or 'pJSD'.*
