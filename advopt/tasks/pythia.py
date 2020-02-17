@@ -142,8 +142,7 @@ class PythiaTuneMC(Task):
       ],
       batch_size=32,
       n_workers=self.n_jobs,
-      seed=self.seed,
-      log='./pythia-log'
+      seed=self.seed
     )
 
   def generator(self, params):
@@ -157,8 +156,7 @@ class PythiaTuneMC(Task):
       ],
       batch_size=32,
       n_workers=self.n_jobs,
-      seed=self.seed,
-      log='./pythia-log'
+      seed=self.seed
     )
 
   def models(self, seed=None):
@@ -337,7 +335,7 @@ class PythiaMixtureSampler(object):
     return samples, retrieved_params
 
 class PythiaTracker(Task):
-  def __init__(self, n_jobs=None, seed=None, flatten=False):
+  def __init__(self, n_jobs=None, seed=None, flatten=False, logs=None):
     self.shape = (1, 32, 32)
     self._ndim = self.shape
 
@@ -363,6 +361,7 @@ class PythiaTracker(Task):
       '%s = %lf' % (k, v)
       for k, v in zip(param_names, monash)
     ]
+    self.logs = logs
 
     super(PythiaTracker, self).__init__(ndim=self.shape, seed=seed)
 
@@ -396,7 +395,8 @@ class PythiaTracker(Task):
         options=self.options,
         batch_size=1,
         n_workers=self.n_jobs,
-        seed=self.seed
+        seed=self.seed,
+        log=self.logs
       )
 
     return self._mill

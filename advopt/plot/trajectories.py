@@ -42,7 +42,9 @@ def interpolate(cs, fs, xs):
   return interp1d(cs, fs, kind='previous', fill_value='extrapolate')(xs)
 
 
-def plot_convergence(results, dist, individual=False, budget=None, points=1024, qs=(0.1,), properties=None, mode='argmin', empty='ignore'):
+def plot_convergence(
+        results, dist, individual=False, budget=None, points=1024, qs=(0.1,),
+        properties=None, mode='argmin', empty='ignore', extrapolate=True):
   if properties is None:
     properties = dict()
 
@@ -86,7 +88,16 @@ def plot_convergence(results, dist, individual=False, budget=None, points=1024, 
   else:
     max_cost = budget
 
-  xs = np.linspace(0, max_cost, num=points)
+  if extrapolate:
+    xs = {
+      name : np.linspace(0, max_cost, num=points)
+      for name in results
+    }
+  else:
+    xs = dict()
+    for name in results:
+      max_c = np.median([np.sum(r.costs) for r in results[name]])
+      xs[name] = np.linspace(0, max_c, num=points)
 
   inter_trajectories = dict()
   for name in results:
@@ -94,7 +105,7 @@ def plot_convergence(results, dist, individual=False, budget=None, points=1024, 
 
     for i in range(len(trajectories[name])):
       cs, ds = trajectories[name][i]
-      inter_trajectories[name][i, :] = interpolate(cs, ds, xs)
+      inter_trajectories[name][i, :] = interpolate(cs, ds, xs[name])
 
   medians = dict()
   for name in inter_trajectories:
@@ -111,12 +122,12 @@ def plot_convergence(results, dist, individual=False, budget=None, points=1024, 
     quantiles = None
 
   for i, name in enumerate(medians):
-    plt.plot(xs, medians[name], **properties[name])
+    plt.plot(xs[name], medians[name], **properties[name])
 
     if qs is not None:
       n = len(qs)
       for j, q in enumerate(qs):
         plt.fill_between(
-          xs, quantiles[name][j, :], quantiles[name][2 * n - j - 1, :],
+          xs[name], quantiles[name][j, :], quantiles[name][2 * n - j - 1, :],
           alpha=q, color=properties[name]['color']
         )

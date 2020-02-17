@@ -5,6 +5,13 @@ cpu_re = re.compile(r'^cpu(?:[/](\d+))?$')
 
 CUDA_VISIBLE_DEVICES = 'CUDA_VISIBLE_DEVICES'
 
+
+import keras
+model = keras.Sequential(keras.layers.Dense(10))
+
+model.fit()
+
+
 def get_device(device):
   import os
 

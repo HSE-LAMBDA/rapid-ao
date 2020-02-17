@@ -1,0 +1,17 @@
+python adversarial-optimization/experiments/AVO.py --device='cuda:1' --budget=32768 --seed=11111 --logs=logs/ --njobs=8 &
+python adversarial-optimization/experiments/AVO.py --device='cuda:1' --budget=32768 --seed=11112 --logs=logs/ --njobs=8 &
+python adversarial-optimization/experiments/AVO.py --device='cuda:1' --budget=32768 --seed=11113 --logs=logs/ --njobs=8 &
+python adversarial-optimization/experiments/AVO.py --device='cuda:1' --budget=32768 --seed=11114 --logs=logs/ --njobs=8 &
+python adversarial-optimization/experiments/AVO.py --device='cuda:1' --budget=32768 --seed=11115 --logs=logs/ --njobs=8 &
+python adversarial-optimization/experiments/AVO.py --device='cuda:1' --budget=32768 --seed=11116 --logs=logs/ --njobs=8 &
+python adversarial-optimization/experiments/AVO.py --device='cuda:1' --budget=32768 --seed=11117 --logs=logs/ --njobs=8 &
+
+python adversarial-optimization/experiments/AVO.py --device='cuda:2' --budget=32768 --seed=11118 --logs=logs/ --njobs=8 &
+python adversarial-optimization/experiments/AVO.py --device='cuda:2' --budget=32768 --seed=11119 --logs=logs/ --njobs=8 &
+python adversarial-optimization/experiments/AVO.py --device='cuda:2' --budget=32768 --seed=11120 --logs=logs/ --njobs=8 &
+python adversarial-optimization/experiments/AVO.py --device='cuda:2' --budget=32768 --seed=11121 --logs=logs/ --njobs=8 &
+python adversarial-optimization/experiments/AVO.py --device='cuda:2' --budget=32768 --seed=11122 --logs=logs/ --njobs=8 &
+python adversarial-optimization/experiments/AVO.py --device='cuda:2' --budget=32768 --seed=11123 --logs=logs/ --njobs=8 &
+python adversarial-optimization/experiments/AVO.py --device='cuda:2' --budget=32768 --seed=11124 --logs=logs/ --njobs=8 &
+
+wait

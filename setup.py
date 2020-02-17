@@ -1,5 +1,5 @@
 """
-  Pythia Mill
+  Adaptive Divergence for rapid Adversarial Optimization
 """
 
 from setuptools import setup, find_packages
@@ -15,7 +15,7 @@ with open(osp.join(here, 'README.md'), encoding='utf-8') as f:
 
 
 setup(
-  name='adv-opt',
+  name='advopt',
 
   version='1.0.0',
 
@@ -54,11 +54,12 @@ setup(
   },
 
   install_requires=[
-    'numpy==1.17.2',
+    'numpy==1.17.4',
     'scikit-optimize==0.5.2',
-    'scipy==1.3.0',
-    'pythia-mill==1.0.0',
-    'tqdm==4.32.2',
-    'torch==1.1.0'
+    'scipy==1.4.1',
+    'tqdm==4.40.2',
+    'torch==1.3.1',
+    'scikit-learn==0.22',
+    'catboost==0.21'
   ],
 )

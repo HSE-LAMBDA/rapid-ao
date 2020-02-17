@@ -90,34 +90,34 @@ def nn_models(ndim, n_units=128, grad_penalty=1e-2, reg_penalty=1e-3):
 
   models = {
     'JSD-NN': lambda device: Network(
-      net=Dense(ndim=ndim, n0=n_units),
+      net=Dense(ndim=ndim, hidden_units=n_units),
       device=device,
       regularization=None
     ),
 
     'lin-pJSD-grad': lambda device: Network(
-      net=Dense(ndim=ndim, n0=n_units),
+      net=Dense(ndim=ndim, hidden_units=n_units),
       device=device,
       regularization=grad_reg(grad_penalty),
       capacity=lincapacity()
     ),
 
     'log-pJSD-grad' : lambda device: Network(
-      net=Dense(ndim=ndim, n0=n_units),
+      net=Dense(ndim=ndim, hidden_units=n_units),
       device=device,
       regularization=grad_reg(grad_penalty),
       capacity=logcapacity()
     ),
 
     'lin-pJSD-reg': lambda device: Network(
-      net=Dense(ndim=ndim, n0=n_units),
+      net=Dense(ndim=ndim, hidden_units=n_units),
       device=device,
       regularization=l2_reg(reg_penalty),
       capacity=lincapacity()
     ),
 
     'log-pJSD-reg': lambda device: Network(
-      net=Dense(ndim=ndim, n0=n_units),
+      net=Dense(ndim=ndim, hidden_units=n_units),
       device=device,
       regularization=l2_reg(reg_penalty),
       capacity=logcapacity()
