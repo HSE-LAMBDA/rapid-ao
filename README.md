@@ -26,8 +26,9 @@ Other packages are available from the default pip repository and required versio
 Jupyter notebooks with the experiments described in the paper can be found in `notebooks/` directory:
 - `AD-<task name>-<method name>.ipynb` --- notebooks for profiling adaptive divergences on the synthetic tasks;
 - `BO-XOR-GBDT.ipynb` --- the experiment with Bayesian Optimization over GBDT-based adaptive divergences on one of the synthetic tasks;
-- `BO-Pythia1-Cat.ipynb` --- tuning Pythia hyper-parameters with Bayesian Optimization and CatBoost-based adaptive divergences;
-- `AVO.ipynb` --- experiments with Adversarial Variational Optimization;
-- `Pythia-Tune-AVO.ipynb` --- an example implementation of AVO (source: [MLHEP 2019](https://github.com/yandexdataschool/mlhep2019/blob/master/notebooks/day-8/Pythia-Tune-AVO.ipynb)).
+- `BO-PythiaTuneMC-Cat.ipynb` --- tuning Pythia hyper-parameters with Bayesian Optimization and CatBoost-based adaptive divergences;
+- `plot-AVO.ipynb` --- visualization of AVO results.
+
+Code for the experiments involving AVO can be found in `experiments/AVO.py`.
 
 *Note: inside the package adaptive divergences might be referred as 'pseudo-Jensen-Snannon divergences' or 'pJSD'.*
