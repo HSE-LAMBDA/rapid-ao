@@ -54,7 +54,7 @@ setup(
   },
 
   install_requires=[
-    'numpy==1.17.4',
+    'numpy==1.22.0',
     'scikit-optimize==0.5.2',
     'scipy==1.4.1',
     'tqdm==4.40.2',
