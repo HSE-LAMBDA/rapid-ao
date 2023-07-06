@@ -56,7 +56,7 @@ setup(
   install_requires=[
     'numpy==1.17.4',
     'scikit-optimize==0.5.2',
-    'scipy==1.4.1',
+    'scipy==1.10.0',
     'tqdm==4.40.2',
     'torch==1.3.1',
     'scikit-learn==0.22',
